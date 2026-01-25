@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<div th:fragment="left">
+		
+		<h2 class="leftH2">
+            <span class="span1"></span>>功能墙<span></span>
+        </h2>
+        <nav>
+            <ul class="list">
+				<li class="menu_01"><a onclick="transitionTo('/collection/album');">我的相册</a></li>
+				<li class="menu_02"><a onclick="transitionTo('/collection/record');">心情贴</a></li>
+				<li class="menu_03"><a onclick="transitionTo('/collection/countdown');">倒计时</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

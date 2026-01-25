@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}">
+    <title>登入</title>
+</head>
+<body>
+<div class="container">
+    <div class="login-container bg-while">
+        <h2 class="test-center mb-4">账号登入</h2>
+
+        <div th:if="${errorFalg}" class="alert alert-danger" role="alert">
+            <p th:text="${errorMessage}">
+        </div>
+
+        <form th:action="@{/login}" th:object="${loginInfo}" method="post">
+            <div calss="mb-3">
+                <label class="form-label" for="username">账号</label>
+                <input type="text" th:field="*{username}" class="form-control" id="username" required>
+            </div>
+            <div calss="mb-3">
+                <label class="form-label" for="password">密码</label>
+                <input type="password" th:field="*{password}" class="form-control" id="password" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary w-100">登入</button>
+            <br><br>
+            <a href="/register" style="width: 100%;">注册账号</a>
+        </form>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+</body>
+<style>
+.login-container{
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1)
+}
+body{
+    background-color: #f8f9fa;
+}
+</style>
+</html>

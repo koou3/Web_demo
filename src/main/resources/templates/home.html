@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:replace="common/common_header.html"></div>
+<body>
+    <form th:action="@{/menu}" th:object="${loginInfo}" method="post">
+        <div class="publicHeader" th:insert="~{fragments/header :: header}">...</div>
+        <!-- 时间 -->
+        <section class="publicTime">
+            <span id="time">2015年1月1日 11:11 星期一</span>
+        </section>
+        <section class="publicMian">
+            <div class="left" th:insert="~{fragments/left :: left}">...</div>
+            <div class="right">
+                <div class="wFont">
+                    <h2>Admin</h2>
+                    <p>子画面を表示する</p>
+                    <span id="hours"></span>
+                </div>
+            </div>
+        </section>
+    </form>
+
+    <div class="footer" th:insert="~{fragments/footer :: footer}">...</div>
+    <!-- 画面Js -->
+    <script type="text/javascript" th:src="@{/js/time.js}"></script>
+</body>
+</html>
